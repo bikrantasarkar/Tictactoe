@@ -3,3 +3,11 @@
   justify-content: center;
   align-items:center;
 }
+
+.water-background{
+  background-color: #4B495F;
+}
+.game-heading{
+  padding: 5px 20px;
+  border-radius: 5px;
+}
