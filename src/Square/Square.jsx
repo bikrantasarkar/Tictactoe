@@ -43,13 +43,20 @@ const crossSvg = (
   </svg>
 );
 
-const Square = ({setGameState,id} ) => {
+const Square = ({setGameState,id,currentPlayer,setCurrentPlayer} ) => {
   const [icon, setIcon] = useState(null);
+  
 
   const clickOnSqaure=()=>{
-    if(!icon)
-    {
-      setIcon(circleSvg);
+    if(!icon){
+      if(currentPlayer==="circle"){
+        setIcon(circleSvg);
+      }else{
+        setIcon(crossSvg);
+      }
+
+      setCurrentPlayer(currentPlayer==='circle'?'cross':'circle')
+      
     }
   }
 
