@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './Square.css'
 
 const circleSvg = (
@@ -43,15 +43,20 @@ const crossSvg = (
   </svg>
 );
 
-const Square = (
-  {
-    setGameState,
-    id
+const Square = ({setGameState,id} ) => {
+  const [icon, setIcon] = useState(null);
+
+  const clickOnSqaure=()=>{
+    if(!icon)
+    {
+      setIcon(circleSvg);
+    }
   }
-  
-) => {
+
   return (
-    <div className='square'></div>
+    <div onClick={clickOnSqaure} className='square'>
+      {icon}
+    </div>
   )
 }
 
