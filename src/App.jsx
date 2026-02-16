@@ -21,13 +21,11 @@ const App = () => {
         
         <h1 className='game-heading water-background'>Tic Tac Toe</h1>
       <div className='square-wrapper'>
-        {
-          gameState.map(arr=>
-          {
-            return arr.map(e=>{
-              return <Square/>
+        {gameState.map(arr=>
+            arr.map(e=>{
+              return <Square setGameState={setGameState} id={e} key={e}/>
             })
-          }
+
           )
         }
       </div>
