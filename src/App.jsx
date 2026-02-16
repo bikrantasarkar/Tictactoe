@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import Square from './Square/Square'
 
@@ -9,6 +9,8 @@ const renderFrom = [
 ]
 
 const App = () => {
+  const [gameState, setGameState] = useState(renderFrom);
+
   return (
     <div className='main-div'>
         <div className="move-detection">
@@ -20,7 +22,7 @@ const App = () => {
         <h1 className='game-heading water-background'>Tic Tac Toe</h1>
       <div className='square-wrapper'>
         {
-          renderFrom.map(arr=>
+          gameState.map(arr=>
           {
             return arr.map(e=>{
               return <Square/>
